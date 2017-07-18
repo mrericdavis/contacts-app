@@ -1,0 +1,20 @@
+<h1>New Contact</h1>
+<%= form_tag "/contacts", method: "post" do %>
+  <div class="form-group">
+    first_name: <input type="text" class="form-control" name="first_name">
+  </div>
+  <div class="form-group">
+    last_name: <input type="text" class="form-control" name="last_name">
+  </div>
+  <div class="form-group">
+    email: <input type="email" class="form-control" name="email">
+  </div>
+  <div class="form-group">
+    phone_number: <input type="text" class="form-control" name="phone_number">
+  </div>
+  <input type="submit" class="btn btn-default" value="Create Contact">
+<% end %>
+
+<br>
+<a href="/contacts">Back to the Home page</a>
+</div>

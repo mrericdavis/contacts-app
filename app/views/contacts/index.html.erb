@@ -1,0 +1,35 @@
+<!-- <div class="" id="myTopnav">
+
+  <a href="/contacts">Home</a>
+ 
+  <a href="/contacts/new" >New Contact</a> -->
+  
+   
+<div style="padding-left:18px">
+<br>
+
+  <h1>"My Merry Christmas Contact List"</h1>
+</div>  
+ 
+
+<% @contacts.each_slice(3) do |three_contacts| %>  
+  <div class="row">
+    <% three_contacts.each do |contact| %>
+      <div class="col-md-4">
+        <div class="well">
+          <h1><a href="/contacts/<%= contact.id %>"> <%= contact.first_name %>  <%= contact.last_name %></a></h1>
+          <h2> <%= contact.email %> </h2>
+          <h2> <%= contact.phone_number %> </h2>
+          <a href="/contacts/<%= contact.id %>/edit">Edit Your Contact</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %> 
+
+<div id="snowflakeContainer">
+    <p class="snowflake">*</p>
+</div>
+<br>
+<br>
+

@@ -1,0 +1,23 @@
+<h1>Contact Info</h1>
+
+<h2><%= @contact.full_name%></h2>
+<h3><%=@contact.email%></h3>
+<h2><%=@contact.phone_number%></h2>
+<h5><%=@contact.friendly_created_time %></h5>
+
+
+
+<a href="/contacts/<%= @contact.id %>/edit" class="btn btn-primary">Edit Contact</a>
+<br>
+<br>
+<%= form_tag "/contacts/#{@contact.id}", method: "delete" do %>
+   <input type="submit" class="btn btn-danger" value="Delete Contact" >
+<% end %>
+
+<br>
+<a href="/contacts" class="btn btn-primary">Back to the Home page</a>
+</div>
+
+
+<!-- <img src="http://images.all-free-download.com/images/graphiclarge/snowman_311613.jpg" alt="The Snow Man"align="right" class="img-circle"> -->
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<link href="https://fonts.googleapis.com/css?family=Neuton" rel="stylesheet">
+
+<div id="snowflakeContainer">
+    <p class="snowflake">*</p>
+</div>
+    <title>ContactsApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+   <nav class="topnav">
+  
+    <div class="topnav" id="myTopnav">
+      <ul class="nav navbar-nav">    
+           
+             <a href="/contacts">Home</a>
+             <a href="/contacts/new" >New Contact</a>
+             <div class=topnav id="myTopnav">
+     
+          <%= form_tag "/contacts_search", method: :get do %>
+           <div class="topnav">
+           <input type="text" class="topnav" placeholder="Search" name="search_terms">
+            <button type="submit" class="btn btn-primary" class="topnav" style="margin-right: 150px">Submit</button>
+           <% end %>
+      </div>
+</nav>
+
+
+
+      
+      <% flash.each do |name, message| %>
+  <div class="alert alert-<%= name %> alert-dismissible fade in" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</span><span class="sr-only">Close</span></button>
+    <%= message.html_safe %>  
+  </div>
+<% end %>
+
+    </div>
+    <%= yield %>
+    <script src="/your_path_to/fallingsnow_v6.js"></script>
+  </body>
+</html>
+
