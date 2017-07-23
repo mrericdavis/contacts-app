@@ -1,5 +1,13 @@
 class ContactsController < ApplicationController
   def index
+
+    search_terms = params[:input_search_terms]
+  
+   if search_terms
+     @contacts = current_user.contacts.where("first_name ILIKE ?", "%" + search_terms + "%")
+   else
+     @contacts = current_user.contacts
+   end
     @contacts = Contact.all
     render "index.html.erb"
   end
@@ -13,7 +21,8 @@ class ContactsController < ApplicationController
       first_name: params[:first_name],
       last_name: params[:last_name],
       email: params[:email],
-      phone_number: params[:phone_number]
+      phone_number: params[:phone_number],
+      user_id: current_user.id
     )
     contact.save
     flash[:success] = "Contact Succesfully Created"

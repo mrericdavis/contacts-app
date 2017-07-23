@@ -21,6 +21,15 @@
            
              <a href="/contacts">Home</a>
              <a href="/contacts/new" >New Contact</a>
+
+              <% if current_user == nil %>
+              <a href="/signup" class="button">Sign Up<b class="link"></b></a>
+             
+              <a href="/login" class="button">Login<b class="link"></b></a>
+              <%else%>
+               
+              <a href="/logout" class="button">Logout<b class="link"></b></a>
+              <% end %>
              <div class=topnav id="myTopnav">
      
           <%= form_tag "/contacts_search", method: :get do %>

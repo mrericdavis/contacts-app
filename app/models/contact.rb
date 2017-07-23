@@ -1,4 +1,5 @@
 class Contact < ApplicationRecord
+  belongs_to :user
   def full_name 
     return first_name + " " + last_name
   end  

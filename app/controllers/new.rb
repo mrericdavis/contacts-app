@@ -1,8 +1,5 @@
-p items = [
-  {id: 1, body: 'foo'},
-  {id: 2, body: 'bar'},
-  {id: 3, body: 'foobar'}
-].map { |item| item[:body] }
+p [2,3,4,5,6].collect {|num| num + "!"}
+
 
 
 
